@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_: MyString
+  description: MyString
+  amount: 1
+  card: 1
+  toaccount: 1
+  balance: 1
+  status: MyString
+  account: 
+
+two:
+  type_: MyString
+  description: MyString
+  amount: 1
+  card: 1
+  toaccount: 1
+  balance: 1
+  status: MyString
+  account: 

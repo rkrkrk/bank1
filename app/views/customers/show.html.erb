@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Accno:</b>
+  <%= @account.accno %>
+</p>
+
+<p>
+  <b>Sortcode:</b>
+  <%= @account.sortcode %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @account.balance %>
+</p>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Card</th>
+    <th>toAccount</th>
+    <th>Closing Balance</th>
+  </tr>
+<h2>Transactions</h2>
+<% @account.transactions.each do |transaction| %>
+ <tr>
+    <td><%= transaction.created_at %></td>
+    <td><%= transaction.type_ %></td>
+    <td><%= transaction.amount %></td>
+    <td><%= transaction.description %></td>
+    <td><%= transaction.card %></td>
+    <td><%= transaction.toaccount %></td>
+    <td><%= transaction.balance %></td>
+    <td><%= link_to 'show', customer_transaction_path(@account,transaction) %>
+   </tr>
+  <p>
+<% end %>
+</table>
+
+<h2><%= link_to 'Create new transaction', new_customer_transaction_path(@account) %></h2>
+
+
+<%= link_to 'Back to list of Accounts',  :controller => "customers", :action => "index" %></p> 

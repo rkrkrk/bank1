@@ -1,0 +1,30 @@
+<h1>List of Customer Accounts</h1>
+
+<table>
+  <tr>
+    <th>Account no.</th>
+    <th>Sort Code</th>
+    <th>Balance</th>
+    <th></th>
+    <th></th>
+    
+  </tr>
+
+<% @accounts.each do |account| %>
+  <tr>
+    <td><%= account.accno %></td>
+    <td><%= account.sortcode %></td>
+    <td><%= account.balance %></td> 
+    <td><%= link_to 'Show', account %></td>
+    <td><%= link_to 'Edit', edit_account_path(account) %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p><%= link_to 'Create New Account', new_account_path %></p>
+
+
+<p><%= link_to 'Logout and Return to Select User Page', :controller => "home", :action => "index"  %></p>

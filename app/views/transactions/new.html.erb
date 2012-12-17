@@ -1,0 +1,22 @@
+<h1>New transaction</h1>
+
+<p>
+  <b>Accno:</b>
+  <%= @account.accno %>
+</p>
+
+<p>
+  <b>Sortcode:</b>
+  <%= @account.sortcode %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @account.balance %>
+</p>
+
+<p id="notice"><%= notice %></p>
+<%= render 'form' %>
+
+
+<%= link_to 'Back', customer_path(@account) %>

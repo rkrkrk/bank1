@@ -1,0 +1,24 @@
+<h1>Accounts for Customer #1234????</h1>
+
+<table>
+  <tr>
+    <th>Account no.</th>
+    <th>Sort Code</th>
+    <th>Balance</th>
+    <th></th>
+  </tr>
+
+<% @accounts.each do |account| %>
+  <tr>
+    <td><%= account.accno %></td>
+    <td><%= account.sortcode %></td>
+    <td><%= account.balance %></td>
+    <td><%= link_to 'View', customer_path(account) %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><%= link_to 'New Transaction', new_customer_transaction_path(account) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Logout and Return to Select User Page', :controller => "home", :action => "index"  %>

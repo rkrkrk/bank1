@@ -1,0 +1,19 @@
+<%= form_for(@transdfgtion) do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :accno %><br />
+    <%= f.number_field :accNo %>
+  </div>
+  <div class="field">
+    <%= f.label :sortcode %><br />
+    <%= f.number_field :sortcode %>
+  </div>
+  <div class="field">
+    <%= f.label :balance %><br />
+    <%= f.number_field :balance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

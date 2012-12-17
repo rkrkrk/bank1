@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transaction</h1>
+
+<p>
+  <b>Type:</b>
+  <%= @transaction.type_ %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @transaction.description %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @transaction.amount %>
+</p>
+
+<p>
+  <b>Card:</b>
+  <%= @transaction.card %>
+</p>
+
+<p>
+  <b>Toaccount:</b>
+  <%= @transaction.toaccount %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @transaction.balance %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @transaction.status %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @transaction.account_id %>
+</p>
+
+
+<%= link_to 'Back', customer_path(@transaction.account_id) %>

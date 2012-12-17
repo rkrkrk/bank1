@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Accno:</b>
+  <%= @account.accno %>
+</p>
+
+<p>
+  <b>Sortcode:</b>
+  <%= @account.sortcode %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @account.balance %>
+</p>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Transact Type</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Card</th>
+    <th>toAccount</th>
+    <th>Closing Balance</th>
+  </tr>
+<h2>Transactions</h2>
+<% @account.transactions.each do |transaction| %>
+ <tr>
+    <td><%= transaction.created_at %></td>
+    <td><%= transaction.amount %></td>
+    <td><%= transaction.type_ %></td>
+    <td><%= transaction.description %></td>
+    <td><%= transaction.card %></td>
+    <td><%= transaction.toaccount %></td>
+    <td><%= transaction.balance %></td>
+   </tr>
+  <p>
+<% end %>
+</table>
+
+
+
+<%= link_to 'Back', accounts_path %>

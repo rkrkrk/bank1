@@ -1,0 +1,35 @@
+<h1>Listing transactions</h1>
+
+<table>
+  <tr>
+    <th>Type </th>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Card</th>
+    <th>Toaccount</th>
+    <th>Balance</th>
+    <th>Status</th>
+    <th>Account</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.type_ %></td>
+    <td><%= transaction.description %></td>
+    <td><%= transaction.amount %></td>
+    <td><%= transaction.card %></td>
+    <td><%= transaction.toaccount %></td>
+    <td><%= transaction.balance %></td>
+    <td><%= transaction.status %></td>
+    <td><%= transaction.account_id %></td>
+    <td><%= link_to 'Show', customer_transaction_path(transaction.account_id,transaction.id) %></td>
+    <td><%= link_to 'Edit', edit_customer_transaction_path(transaction.account_id,transaction.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  accno: 1
+  sortcode: 1
+  : 
+
+two:
+  accno: 1
+  sortcode: 1
+  : 

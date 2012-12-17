@@ -1,0 +1,49 @@
+<%= form_for ([@account,@transaction]) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+     <%= f.label :Transaction_type_ %><br />
+     <%= f.radio_button(:type_, "debit") %>
+     <%= f.label("Debit") %></br>
+     <%= f.radio_button(:type_, "credit") %>
+     <%= f.label("Credit") %></br>
+     <%= f.radio_button(:type_, "transfer") %>
+     <%= f.label("Transfer_to_other_account") %></br>
+ 
+  </div>
+ 
+     <div class="field">
+         <%= f.label :amount %><br />
+         <%= f.text_field :amount %>
+     </div>
+   <div class="field">
+       <%= f.label :description %><br />
+       <%= f.text_field :description %>
+   </div>
+     <div class="field">
+       <%= f.label :card %><br />
+       <%= f.text_field :card %>
+   </div>
+     <div class="field">
+       <%= f.label :to_account %><br />
+       <%= f.text_field :toaccount %>
+   </div>
+       <div class="field">
+         <%= f.hidden_field :account_id %>
+     </div>
+ 
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>
+
